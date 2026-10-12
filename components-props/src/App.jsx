@@ -12,7 +12,6 @@ function App() {
            <UserCard name = "XYZ" image = {logo1}/>
            <UserCard name = "EFG" image = {logo3}/>
 
-
       </>
       
     )
