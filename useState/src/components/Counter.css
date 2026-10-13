@@ -1,0 +1,48 @@
+.main-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(141, 136, 136);
+}
+#pera span {
+    color: rgb(19, 158, 0);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.action{
+    display: flex;
+    gap : 10px;
+}
+#updateBtn{
+    background-color: rgb(30, 30, 238);
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(230, 225, 225);
+    font-weight: 600;
+}
+
+#updateBtn:hover{
+      background-color: rgb(2, 2, 196);
+}
+
+#resetBtn{
+    background-color: red;
+    width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(230, 225, 225);
+    font-weight: 600;
+}
+
+#resetBtn:hover{
+    background-color: rgb(211, 3, 3);
+}
