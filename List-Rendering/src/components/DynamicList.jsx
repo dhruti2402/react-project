@@ -6,6 +6,7 @@ const DynamicList =()  =>{
 
     const [Name, setName] = useState("");
     const [Students, setStudents] = useState([])
+    const [EditStd, setEditStd] = useState(null)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -15,11 +16,26 @@ const DynamicList =()  =>{
             return;
         }
 
-         const newStudent = {
-      name: Name.trim()
-    };
+        if (EditStd !==null){
+            const UpdatedStd = [...Students];
 
-    setStudents([...Students, newStudent]);
+            UpdatedStd[EditStd] = {
+                ...UpdatedStd[EditStd],
+                name : Name.trim()
+            };
+
+            setStudents(UpdatedStd);
+            setEditStd(null);
+
+        }else{
+             const newStudent = {
+              name: Name.trim()
+           };
+
+           setStudents([...Students, newStudent]);
+
+        }
+
     setName("");
 
     }
@@ -33,6 +49,12 @@ const DynamicList =()  =>{
               
     }
 
+    function handleEdit(index){
+
+        setName(Students[index].name)
+        setEditStd(index);
+    }
+
   return (
     <div className='main-container'>
 
@@ -44,14 +66,20 @@ const DynamicList =()  =>{
 
         <input type="text" placeholder='enter student name' value={Name} onChange={(e) =>setName(e.target.value)}/>
 
-        <button type='submit'>Add</button>
+        <button type='submit'>{EditStd !== null ? "Update" : "Add"}</button>
          </form>
 
        <ul className='stdList'>
 
         {Students.map((Students , index) => (<li key={index}>{Students.name} 
+
+            <div className='action'>
+            <button type='submit' id = 'editBtn' onClick={() =>handleEdit(index)}>Update</button>
        
         <button type='button' id='deleteBtn' onClick={() =>handleDelete(index)}>Delete</button>
+            </div>
+
+            
         </li>))}
         </ul>
 
