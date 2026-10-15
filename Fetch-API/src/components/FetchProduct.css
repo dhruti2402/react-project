@@ -1,0 +1,51 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.main-container h1{
+     padding: 20px; 
+     margin-left: 250px;
+     font-size: 34px;
+     font-weight: bolder;
+     color: rgb(4, 4, 228);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+.product-list{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-list img{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(245, 238, 229);
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-list img:hover{
+    transform: scale(1.1);
+}
+
+#title{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+#price{
+    font-size: 22px;
+    font-weight: 500;
+}
