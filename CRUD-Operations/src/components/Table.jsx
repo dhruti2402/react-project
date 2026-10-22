@@ -2,9 +2,19 @@ import React from 'react'
 import './Table.css'
 import {BsFillTrashFill , BsFillPencilFill} from 'react-icons/bs'
 
-const Table = ({rows,deleteRow,editRow}) => {
+const Table = ({rows,deleteRow,editRow,search,setSearch}) => {
   return (
     <div className='main-container'>
+
+       <div className='search'>
+         <input type="text" placeholder="Search by page or description..."
+           value={search} name='search'
+           onChange={(e) => setSearch(e.target.value)}
+           className='search-bar'
+          />
+       </div>
+       
+
           <table className='table'>
                  <thead>
                          <tr>

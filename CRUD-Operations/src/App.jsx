@@ -8,11 +8,24 @@ function App() {
 
   const [modalOpen, setmodalOpen] = useState(false)
 
+  //search records
+  const [Search, setSearch] = useState("");
+
   const [rows, setRows] = useState( [
     {page: "page1" , description: "this is first page" , status: "live"},
     {page: "page2" , description: "this is second page" , status: "draft"},
     {page: "page3" , description: "this is third page" , status: "error"}
   ])
+
+  //search using filter method 
+  const filterRows = rows.filter((row) =>{
+   
+    return(
+    row.page.toLowerCase().includes(Search.toLowerCase()) ||
+    row.description.toLowerCase().includes(Search.toLowerCase()) ||
+    row.status.toLowerCase().includes(Search.toLowerCase())
+          ); 
+  })
 
    const [rowToEdit, setRowToEdit] = useState("")
 
@@ -42,7 +55,13 @@ function App() {
   return (
     <>
       <div>
-             <Table rows={rows} deleteRow={handleDelete} editRow={handleEdit}/>
+        <Table
+                rows={filterRows}
+                deleteRow={handleDelete}
+                editRow={handleEdit}
+                search={Search}
+                setSearch={setSearch}
+          />
 
              <button className='add-btn' onClick={() => setmodalOpen(true)}>Add</button>
 
