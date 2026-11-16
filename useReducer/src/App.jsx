@@ -1,11 +1,14 @@
-import Usereducer from "./hooks/useReducer"
+import ImproveReducer from "./hooks/ImproveReducer"
+// import Usereducer from "./hooks/useReducer"
 
 function App() {
   
 
   return (
     
-      <Usereducer/>
+      // <Usereducer/>
+
+      <ImproveReducer />
     
   )
 }
