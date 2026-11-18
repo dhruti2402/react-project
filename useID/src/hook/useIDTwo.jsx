@@ -4,8 +4,6 @@ const UseIDTwo = () => {
 
     const id = useId();
     
-
-
     return (
         <form className='flex flex-col justify-center items-center gap-4 h-lvh'>
 
